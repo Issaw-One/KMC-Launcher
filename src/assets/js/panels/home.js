@@ -15,7 +15,17 @@ class Home {
         this.news()
         this.socialLick()
         this.instancesSelect()
+        this.refreshProfile()
         document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
+    }
+
+    async refreshProfile() {
+        let configClient = await this.db.readData('configClient')
+        if (!configClient?.account_selected) return
+        let auth = await this.db.readData('accounts', configClient.account_selected)
+        if (!auth?.name) return
+        let nameEl = document.querySelector('.player-name')
+        if (nameEl) nameEl.textContent = auth.name
     }
 
     async news() {

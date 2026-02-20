@@ -1,7 +1,7 @@
 {
     "name": "KMC-Launcher",
     "preductname": "KMC Launcher",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Launcher Mincraft pour le serveur KMC",
     "main": "src/app.js",
     "author": {
